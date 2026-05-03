@@ -21,6 +21,7 @@
           <li><a href="#sponsors">Parceiros</a></li>
           <li><a href="#about">Sobre</a></li>
           <li><a href="#contact">Contato</a></li>
+          <li><a href="#doacao">Doações</a></li>
         </ul>
       </nav>
       <div class="flex align-center">
@@ -30,6 +31,64 @@
     </div>
   </header>
   
+<section id="doacao" class="section">
+  <div class="container">
+    <h2 class="section-title">Área de Doação</h2>
+
+    <div class="card-grid">
+      <!-- Doação via PIX -->
+      <div class="card">
+        <div class="card-body">
+          <h3 class="card-title"><i class="fas fa-heart"></i> Doação via PIX</h3>
+          <p>Ajude nossos animais com uma contribuição:</p>
+          <p><strong>Chave PIX:</strong> seuemail@exemplo.com</p>
+          <button class="btn btn-primary" onclick="copiarPix()">Copiar chave PIX</button>
+        </div>
+      </div>
+
+      <!-- Doação de Itens -->
+      <div class="card">
+        <div class="card-body">
+          <h3 class="card-title"><i class="fas fa-box-open"></i> Doação de Itens</h3>
+          <p>Você pode doar:</p>
+          <ul>
+            <li>Ração para cães e gatos</li>
+            <li>Remédios e suplementos</li>
+            <li>Produtos de higiene e limpeza</li>
+            <li>Areia para gatos</li>
+            <li>Casinhas e cobertores</li>
+            <li>Brinquedos e acessórios</li>
+          </ul>
+
+          <form action="mailto:seuemail@exemplo.com" method="post" enctype="text/plain">
+            <div class="form-group">
+              <label for="nome">Seu nome:</label>
+              <input type="text" id="nome" name="nome" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+              <label for="mensagem">Mensagem:</label>
+              <textarea id="mensagem" name="mensagem" class="form-control" rows="4" required></textarea>
+            </div>
+
+            <input type="submit" class="btn btn-secondary" value="Enviar interesse">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<script>
+function copiarPix() {
+  navigator.clipboard.writeText("seuemail@exemplo.com");
+  alert("Chave PIX copiada!");
+}
+</script>
+
+
+
   <!-- Seção Hero -->
   <section class="hero" id="home">
     <div class="hero-background">

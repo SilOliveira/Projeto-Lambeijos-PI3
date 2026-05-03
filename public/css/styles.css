@@ -513,4 +513,30 @@ footer {
 
     }
 }
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #2c3e50;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  color: #27ae60;
+}
+
+#doacao {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin: 40px auto;
+  max-width: 700px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
     
