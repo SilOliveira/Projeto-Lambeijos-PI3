@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abrigo Lambeijos - Encontre seu novo amigo</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+  <!-- Cabeçalho -->
+  <header>
+    <div class="container flex space-between align-center">
+      <div class="logo">
+        <img src="images/partners/LogoLambeijos.png" alt="Logo Abrigo Lambeijos" style="height: 150px; vertical-align: middle;">
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#home">Início</a></li>
+          <li><a href="#pets">Adotar</a></li>
+          <li><a href="#sponsors">Parceiros</a></li>
+          <li><a href="#doacao">Doações</a></li>
+          <li><a href="#contact">Contato</a></li>
+          
+        </ul>
+      </nav>
+      <div class="flex align-center">
+        <button class="btn btn-outline" onclick="openModal('loginModal')" style="margin-right: 15px;">Entrar</button>
+        <button class="btn btn-primary" onclick="openModal('registerModal')" style="margin-right: 15px;">Cadastre-se</button>
+      </div>
+    </div>
+  </header>
+  
+=  <!-- Seção Hero -->
+  <section class="hero" id="home">
+    <div class="hero-background">
+      <svg viewBox="0 0 1200 400" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <!-- Fundo gradiente -->
+        <defs>
+          <linearGradient id="heroGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#4a8fdb;stop-opacity:0.9" />
+            <stop offset="100%" style="stop-color:#2c5c96;stop-opacity:0.9" />
+          </linearGradient>
+          <!-- Padrão de patas -->
+          <pattern id="pawPattern" x="0" y="0" width="50" height="50" patternUnits="userSpaceOnUse">
+            <path d="M12.5,20 C12.5,17.5 10.5,15.5 8.5,15.5 C6.5,15.5 4.5,17.5 4.5,20 C4.5,22.5 6.5,24.5 8.5,24.5 C10.5,24.5 12.5,22.5 12.5,20 M20,20 C20,17.5 18,15.5 16,15.5 C14,15.5 12,17.5 12,20 C12,22.5 14,24.5 16,24.5 C18,24.5 20,22.5 20,20 M16,28 C16,25.5 14,23.5 12,23.5 C10,23.5 8,25.5 8,28 C8,30.5 10,32.5 12,32.5 C14,32.5 16,30.5 16,28 M14,16 C14,13.5 12,11.5 10,11.5 C8,11.5 6,13.5 6,16 C6,18.5 8,20.5 10,20.5 C12,20.5 14,18.5 14,16" fill="rgba(255,255,255,0.15)" />
+          </pattern>
+        </defs>
+        <!-- Retângulo de fundo com gradiente -->
+        <rect width="100%" height="100%" fill="url(#heroGradient)" />
+        <!-- Retângulo com padrão de patas -->
+        <rect width="100%" height="100%" fill="url(#pawPattern)" />
+        <!-- Círculos decorativos -->
+        <circle cx="80" cy="80" r="60" fill="rgba(255,255,255,0.1)" />
+        <circle cx="1100" cy="300" r="80" fill="rgba(255,255,255,0.1)" />
+        <circle cx="200" cy="250" r="40" fill="rgba(255,255,255,0.1)" />
+        <circle cx="1000" cy="150" r="50" fill="rgba(255,255,255,0.1)" />
+        <!-- Ondas decorativas -->
+        <path d="M0,300 Q300,270 600,300 T1200,300 V400 H0 Z" fill="rgba(255,255,255,0.1)" />
+        <path d="M0,320 Q300,290 600,320 T1200,320 V400 H0 Z" fill="rgba(255,255,255,0.05)" />
+      </svg>
+    </div>
+    <div class="container">
+      <h1>Encontre seu novo melhor amigo</h1>
+      <p>Milhares de animais estão esperando por um lar. Adote, não compre. Faça a diferença na vida de um animal hoje mesmo.</p>
+      <a href="#pets" class="btn btn-secondary">Adote Agora</a>
+    </div>
+  </section>
+  
+  <!-- Seção de Busca -->
+  <section class="section">
+    <div class="container">
+      <div class="search-container">
+        <h3 class="search-title">Encontre o pet perfeito para você</h3>
+        <form class="search-form">
+          <div class="form-group">
+            <label for="animal-type">Tipo</label>
+            <select id="animal-type" class="form-control">
+              <option value="">Todos</option>
+              <option value="dog">Cachorro</option>
+              <option value="cat">Gato</option>
+              <option value="bird">Ave</option>
+              <option value="other">Outro</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="breed">Raça</label>
+            <select id="breed" class="form-control">
+              <option value="">Todas</option>
+              <option value="srd">SRD (Sem Raça Definida)</option>
+              <option value="golden">Golden Retriever</option>
+              <option value="labrador">Labrador</option>
+              <option value="siamese">Siamês</option>
+              <option value="persian">Persa</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="size">Tamanho</label>
+            <select id="size" class="form-control">
+              <option value="">Todos</option>
+              <option value="small">Pequeno</option>
+              <option value="medium">Médio</option>
+              <option value="large">Grande</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="age">Idade</label>
+            <select id="age" class="form-control">
+              <option value="">Todas</option>
+              <option value="puppy">Filhote (até 1 ano)</option>
+              <option value="young">Jovem (1-3 anos)</option>
+              <option value="adult">Adulto (3-8 anos)</option>
+              <option value="senior">Idoso (8+ anos)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="location">Localização</label>
+            <select id="location" class="form-control">
+              <option value="">Todas</option>
+              <option value="sp">São Paulo</option>
+              <option value="rj">Rio de Janeiro</option>
+              <option value="mg">Minas Gerais</option>
+              <option value="rs">Rio Grande do Sul</option>
+            </select>
+          </div>
+          <div class="search-submit">
+            <button type="submit" class="btn btn-primary">Buscar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Seção de Pets -->
+  <section class="section" id="pets">
+    <div class="container">
+      <h2 class="section-title">Pets disponíveis para adoção</h2>
+      <div class="card-grid" id="pets-container">
+        <!-- Os cards dos pets serão inseridos dinamicamente via JavaScript -->
+      </div>
+      <div style="text-align: center; margin-top: 3rem;">
+        <button class="btn btn-outline">Carregar mais pets</button>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Seção de Parceiros -->
+  <section class="section sponsors" id="sponsors">
+    <div class="container">
+      <h2 class="section-title">Nossos Parceiros</h2>
+      <p style="text-align: center; max-width: 700px; margin: 0 auto 2rem;">Estas são as ONGs e instituições que trabalham conosco para garantir que mais animais encontrem lares amorosos.</p>
+      <div class="sponsor-list">
+        <div class="sponsor-item">
+          <div class="sponsor-logo">
+            <img src="images/partners/amigos-dos-animais.jpg" alt="ONG Amigos dos Animais">
+          </div>
+          <h3>Amigos dos Animais</h3>
+          <p>São Paulo, SP</p>
+          <div style="height: 40px;"></div>
+          <a href="#" class="btn btn-outline" style="margin-top: 1.5rem;">Saiba mais</a>
+        </div>
+        <div class="sponsor-item">
+          <div class="sponsor-logo">
+            <img src="images/partners/abrigo-lambeijos.jpg" alt="Abrigo Lambeijos">
+          </div>
+          <h3>Abrigo Lambeijos</h3>
+          <p>São Paulo, SP</p>
+          <div style="height: 40px;"></div>
+          <a href="#" class="btn btn-outline" style="margin-top: 1.5rem;">Saiba mais</a>
+        </div>
+      </div>
+      <div style="text-align: center; margin-top: 3rem;">
+        <button class="btn btn-secondary" onclick="openModal('partnerModal')">Seja um parceiro</button>
+      </div>
+    </div>
+  </section>
+  
+<section id="doacao" class="section">
+  <div class="container">
+    <h2 class="section-title">Área de Doação</h2>
+    
+      <p>Sua contribuição ajuda nossos animais a terem uma vida melhor 🐾</p>
+
+    <div class="card-grid">
+      <!-- Doação via PIX -->
+      <div class="card">
+        <div class="card-body">
+          <h3 class="card-title"><i class="fas fa-heart"></i> Doação via PIX</h3>
+          
+
+          <!-- Valores sugeridos -->
+          <div class="donation-options">
+            <button class="btn btn-success">Doe R$10</button>
+            <button class="btn btn-success">Doe R$25</button>
+            <button class="btn btn-success">Doe R$50</button>
+          </div>
+
+          <!-- QR Code PIX -->
+          <p><strong>Chave PIX:</strong></p>
+          <img src="img/qrcode-pix.png" alt="QR Code PIX para doação" width="200">
+
+          <button class="btn btn-primary" onclick="copiarPix()">Copiar chave PIX</button>
+        </div>
+      </div>
+
+      <!-- Doação de Itens -->
+      <div class="card">
+        <div class="card-body">
+          <h3 class="card-title"><i class="fas fa-box-open"></i> Doação de Itens</h3>
+          <p>Você pode doar:</p>
+          <ul>
+            <li><i class="fa-solid fa-bone"></i> Ração para cães e gatos</li>
+            <li><i class="fa-solid fa-pills"></i> Remédios e suplementos</li>
+            <li><i class="fa-solid fa-soap"></i> Produtos de higiene e limpeza</li>
+            <li><i class="fa-solid fa-cat"></i> Areia para gatos</li>
+            <li><i class="fa-solid fa-bed"></i> Casinhas e cobertores</li>
+            <li><i class="fa-solid fa-futbol"></i> Brinquedos e acessórios</li>
+          </ul>
+
+
+          <form action="mailto:seuemail@exemplo.com" method="post" enctype="text/plain">
+            <div class="form-group">
+              <label for="nome">Seu nome:</label>
+              <input type="text" id="nome" name="nome" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+              <label for="mensagem">Mensagem:</label>
+              <textarea id="mensagem" name="mensagem" class="form-control" rows="4" required></textarea>
+            </div>
+
+            <input type="submit" class="btn btn-secondary" value="Enviar interesse">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+function copiarPix() {
+  navigator.clipboard.writeText("seuemail@exemplo.com");
+  alert("Chave PIX copiada!");
+}
+</script>
+
+
+  <!-- Seção CTA -->
+  <section class="section cta">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Tem um animal para adoção?</h2>
+        <p>Se você tem um animal para adoção, cadastre-o em nossa plataforma e ajude-o a encontrar um novo lar amoroso.</p>
+        <button class="btn btn-secondary" onclick="openModal('registerPetModal')">Cadastrar animal</button>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Rodapé -->
+  <footer id="contact">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">
+            <i class="fas fa-paw"></i> Abrigo Lambeijos
+          </div>
+          <p>Nossa missão é conectar animais que precisam de um lar com pessoas que têm amor para dar.</p>
+          <div class="footer-social">
+            <a href="https://www.facebook.com/share/1ZcAUaTbQp/" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div>
+          <h3 class="footer-title">Contato</h3>
+          <ul class="footer-links">
+            <li><i class="fas fa-map-marker-alt"></i> Rua Exemplo, 123 - São Paulo, SP</li>
+            <li><i class="fas fa-phone"></i> (11) 1234-5678</li>
+            <li><i class="fas fa-envelope"></i> contato@lambeijos.com.br</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-title">Newsletter</h3>
+          <p>Receba novidades sobre adoções e dicas para cuidar do seu pet.</p>
+          <form style="margin-top: 1rem;">
+            <div class="form-group">
+              <input type="email" placeholder="Seu e-mail" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem;">Inscrever-se</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Lambeijos. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- Modal de Cadastro de Usuário -->
+  <div class="modal" id="registerModal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal('registerModal')">×</button>
+      <h2 class="form-title">Cadastre-se</h2>
+      <form>
+        <div class="form-row">
+          <div class="form-col form-col-half">
+            <div class="form-group">
+              <label for="register-name">Nome completo</label>
+              <input type="text" id="register-name" class="form-control" required>
+            </div>
+          </div>
+          <div class="form-col form-col-half">
+            <div class="form-group">
+              <label for="register-email">E-mail</label>
+              <input type="email" id="register-email" class="form-control" required>
+            </div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-col form-col-half">
+            <div class="form-group">
+              <label for="register-password">Senha</label>
+              <input type="password" id="register-password" class="form-control" required>
+            </div>
+          </div>
+          <div class="form-col form-col-half">
+            <div class="form-group">
+              <label for="register-confirm-password">Confirmar senha</label>
+              <input type="password" id="register-confirm-password" class="form-control" required>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="register-phone">Telefone</label>
+          <input type="tel" id="register-phone" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="register-address">Endereço</label>
+          <input type="text" id="register-address" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="register-city">Cidade</label>
+          <input type="text" id="register-city" class="form-control">
+        </div>
+        <div class="form-row">
+          <div class="form-col form-col-half">
+            <div class="form-group">
+              <label for="register-state">Estado</label>
+              <input type="text" id="register-state" class="form-control">
+            </div>
+          </div>
+          <div class="form-col form-col-half">
+            <div class="form-group">
+              <label for="register-zip">CEP</label>
+              <input type="text" id="register-zip" class="form-control">
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <input type="checkbox" id="register-terms">
+          <label for="register-terms">Eu concordo com os <a href="#">termos de uso</a> e <a href="#">política de privacidade</a></label>
+        </div>
+        <div style="text-align: center; margin-top: 1.5rem;">
+          <button type="submit" class="btn btn-primary">Cadastrar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+  <!-- Modal de Login -->
+  <div class="modal" id="loginModal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal('loginModal')">×</button>
+      <h2 class="form-title">Entrar</h2>
+      <form>
+        <div class="form-group">
+          <label for="login-email">E-mail</label>
+          <input type="email" id="login-email" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="login-password">Senha</label>
+          <input type="password" id="login-password" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <a href="#" style="text-decoration: none; color: var(--primary);">Esqueceu sua senha?</a>
+        </div>
+        <div style="text-align: center; margin-top: 1.5rem;">
+          <button type="submit" class="btn btn-primary">Entrar</button>
+        </div>
+      </form>
+      <div style="text-align: center; margin-top: 1.5rem;">
+        <p>Não tem uma conta? <a href="#" onclick="closeModal('loginModal'); openModal('registerModal');">Cadastre-se</a></p>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Modal de Adoção -->
+  <div class="modal" id="adoptModal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal('adoptModal')">×</button>
+      <h2 class="form-title">Adotar <span id="pet-name"></span></h2>
+      <p style="text-align: center; margin-bottom: 1.5rem;">Preencha o formulário abaixo para iniciar o processo de adoção. Após o envio, entraremos em contato para agendar uma visita.</p>
+      <form>
+        <div class="form-row">
+          <div class="form-col form-col-half">
+            <div class="form-group">
+              <label for="adopt-name">Nome completo</label>
+              <input type="text" id="adopt-name" class="form-control" required>
+            </div>
+          </div>
+          <div class="form-col form-col-half">
+            <div class="form-group">
+              <label for="adopt-email">E-mail</label>
+              <input type="email" id="adopt-email" class="form-control" required>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="adopt-phone">Telefone</label>
+          <input type="tel" id="adopt-phone" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="adopt-address">Endereço completo</label>
+          <input type="text" id="adopt-address" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="adopt-reason">Por que você quer adotar este animal?</label>
+          <textarea id="adopt-reason" class="form-control" rows="3" required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="adopt-experience">Você já teve animais de estimação antes?</label>
+          <select id="adopt-experience" class="form-control" required>
+            <option value="">Selecione</option>
+            <option value="yes">Sim</option>
+            <option value="no">Não</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="adopt-home">Tipo de residência</label>
+          <select id="adopt-home" class="form-control" required>
+            <option value="">Selecione</option>
+            <option value="house">Casa</option>
+            <option value="apartment">Apartamento</option>
+            <option value="other">Outro</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <input type="checkbox" id="adopt-terms" required>
+          <label for="adopt-terms">Eu entendo que a adoção é um compromisso sério e estou preparado para cuidar deste animal pelo resto de sua vida</label>
+        </div>
+        <div style="text-align: center; margin-top: 1.5rem;">
+          <button type="submit" class="btn btn-primary">Enviar solicitação</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+  <!-- Modal de Cadastro de Pet para Adoção -->
+  <div class="modal" id="registerPetModal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal('registerPetModal')">×</button>
+      <h2 class="form-title">Cadastrar animal para adoção</h2>
+      <form id="registerPetForm">
+        <div class="form-group">
+          <label for="pet-type">Tipo de animal</label>
+          <select id="pet-type" class="form-control" required>
+            <option value="">Selecione</option>
+            <option value="dog">Cachorro</option>
+            <option value="cat">Gato</option>
+            <option value="bird">Ave</option>
+            <option value="other">Outro</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="pet-name-register">Nome do animal</label>
+          <input type="text" id="pet-name-register" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="pet-breed">Raça</label>
+          <input type="text" id="pet-breed" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="pet-age">Idade aproximada</label>
+          <input type="text" id="pet-age" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="pet-size">Tamanho</label>
+          <select id="pet-size" class="form-control" required>
+            <option value="">Selecione</option>
+            <option value="small">Pequeno</option>
+            <option value="medium">Médio</option>
+            <option value="large">Grande</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="pet-gender">Sexo</label>
+          <select id="pet-gender" class="form-control" required>
+            <option value="">Selecione</option>
+            <option value="male">Macho</option>
+            <option value="female">Fêmea</option>
+          </select>
+          <div class="form-group">
+            <label for="pet-photo">Foto do animal</label>
+            <input type="file" id="pet-photo" class="form-control" accept="image/*" required>
+            <img id="preview-img" src="#" alt="Prévia da imagem" style="display: none; margin-top: 1rem; max-height: 200px; border-radius: 8px;">
+        </div>
+        </div>
+        <div class="form-group">
+          <label for="pet-description">Descrição</label>
+          <textarea id="pet-description" class="form-control" rows="4" required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="pet-location">Localização</label>
+          <input type="text" id="pet-location" class="form-control" required>
+        </div>
+        <div style="text-align: center; margin-top: 1.5rem;">
+          <button type="submit" class="btn btn-primary">Cadastrar animal</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+  <!-- Modal de Parceria -->
+  <div class="modal" id="partnerModal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal('partnerModal')">×</button>
+      <h2 class="form-title">Seja um parceiro</h2>
+      <p style="text-align: center; margin-bottom: 1.5rem;">Preencha o formulário abaixo para se tornar um parceiro do AdotaPet. Entraremos em contato em breve.</p>
+      <form>
+        <div class="form-group">
+          <label for="partner-name">Nome da organização</label>
+          <input type="text" id="partner-name" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="partner-type">Tipo de organização</label>
+          <select id="partner-type" class="form-control" required>
+            <option value="">Selecione</option>
+            <option value="ong">ONG</option>
+            <option value="shelter">Abrigo</option>
+            <option value="clinic">Clínica veterinária</option>
+            <option value="petshop">Pet shop</option>
+            <option value="other">Outro</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="partner-contact">Nome do responsável</label>
+          <input type="text" id="partner-contact" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="partner-email">E-mail</label>
+          <input type="email" id="partner-email" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="partner-phone">Telefone</label>
+          <input type="tel" id="partner-phone" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="partner-address">Endereço</label>
+          <input type="text" id="partner-address" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="partner-city">Cidade</label>
+          <input type="text" id="partner-city" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="partner-state">Estado</label>
+          <input type="text" id="partner-state" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="partner-description">Descrição da organização</label>
+          <textarea id="partner-description" class="form-control" rows="4" required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="partner-logo">Logo da organização</label>
+          <input type="file" id="partner-logo" class="form-control" accept="image/*" required>
+        </div>
+        <div style="text-align: center; margin-top: 1.5rem;">
+          <button type="submit" class="btn btn-primary">Enviar solicitação</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+  <!-- Inclusão do JavaScript -->
+  <script src="js/main.js"></script>
+
+  <script>
+    document.getElementById('pet-photo').addEventListener('change', function(event) {
+        const preview = document.getElementById('preview-img');
+        const file = event.target.files[0];
+    
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                preview.src = e.target.result;
+                preview.style.display = 'block';
+            };
+            reader.readAsDataURL(file);
+        } else {
+            preview.src = '#';
+            preview.style.display = 'none';
+        }
+    });
+    </script>
+    
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .hero {
+      position: relative;
+      color: white;
+      padding: 100px 0;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .hero-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    .hero-background svg {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      
+      .hero p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</body>
+</html>
