@@ -531,12 +531,116 @@ nav ul li a:hover {
 }
 
 #doacao {
+  background-color: #f9f9f9;
   border: 1px solid #ccc;
-  padding: 20px;
+  padding: 3rem 0;
   margin: 40px auto;
   max-width: 700px;
   border-radius: 8px;
-  background-color: #f9f9f9;
+  text-align: center;
 }
 
-    
+.donation-options {
+  margin: 1rem 0;
+}
+
+.donation-options .btn-success {
+  margin: 5px;
+  background-color: #28a745;
+  border: none;
+}
+
+.donation-options .btn-success:hover {
+  background-color: #218838;
+}
+
+.section-title {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+/* Grade dos cartões */
+.card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+/* Cartões individuais */
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  width: 320px;
+  padding: 1.5rem;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-title {
+  font-size: 1.3rem;
+  color: #444;
+  margin-bottom: 1rem;
+}
+
+/* Botões de doação */
+.donation-options .btn-success {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  margin: 5px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.donation-options .btn-success:hover {
+  background-color: #218838;
+}
+
+/* Botão principal */
+.btn-primary {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #0069d9;
+}
+
+/* Botão secundário */
+.btn-secondary {
+  background-color: #ff7f50;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  background-color: #e96b3a;
+}
+
+/* Formulário */
+.form-group {
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.form-control {
+  width: 100%;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}

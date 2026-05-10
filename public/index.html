@@ -40,8 +40,19 @@
       <div class="card">
         <div class="card-body">
           <h3 class="card-title"><i class="fas fa-heart"></i> Doação via PIX</h3>
-          <p>Ajude nossos animais com uma contribuição:</p>
-          <p><strong>Chave PIX:</strong> seuemail@exemplo.com</p>
+          <p>Sua contribuição ajuda nossos animais a terem uma vida melhor 🐾</p>
+
+          <!-- Valores sugeridos -->
+          <div class="donation-options">
+            <button class="btn btn-success">Doe R$10</button>
+            <button class="btn btn-success">Doe R$25</button>
+            <button class="btn btn-success">Doe R$50</button>
+          </div>
+
+          <!-- QR Code PIX -->
+          <p><strong>Chave PIX:</strong></p>
+          <img src="img/qrcode-pix.png" alt="QR Code PIX para doação" width="200">
+
           <button class="btn btn-primary" onclick="copiarPix()">Copiar chave PIX</button>
         </div>
       </div>
@@ -79,13 +90,13 @@
   </div>
 </section>
 
-
 <script>
 function copiarPix() {
   navigator.clipboard.writeText("seuemail@exemplo.com");
   alert("Chave PIX copiada!");
 }
 </script>
+
 
 
 
