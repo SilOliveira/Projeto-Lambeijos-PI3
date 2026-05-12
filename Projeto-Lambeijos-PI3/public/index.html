@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 </head>
 <body>
@@ -147,102 +148,193 @@
   </section>
   
   <!-- Seção de Parceiros -->
-  <section class="section sponsors" id="sponsors">
+<!-- ====================== NOSSOS PARCEIROS ====================== -->
+  <section class="partners-section" id="parceiros">
     <div class="container">
-      <h2 class="section-title">Nossos Parceiros</h2>
-      <p style="text-align: center; max-width: 700px; margin: 0 auto 2rem;">Estas são as ONGs e instituições que trabalham conosco para garantir que mais animais encontrem lares amorosos.</p>
-      <div class="sponsor-list">
-        <div class="sponsor-item">
-          <div class="sponsor-logo">
-            <img src="images/partners/amigos-dos-animais.jpg" alt="ONG Amigos dos Animais">
+      <div class="section-header">
+        <h2>Nossos Parceiros</h2>
+        <p>Estas são as ONGs e instituições que trabalham conosco para garantir que mais animais encontrem lares amorosos.</p>
+      </div>
+
+      <div class="partners-grid">
+        
+        <!-- Parceiro 1 -->
+        <div class="partner-card">
+          <div class="partner-logo">
+            <img src="images/partners/amigos-dos-animais.jpg" alt="Amigos dos Animais">
           </div>
-          <h3>Amigos dos Animais</h3>
-          <p>São Paulo, SP</p>
-          <div style="height: 40px;"></div>
-          <a href="#" class="btn btn-outline" style="margin-top: 1.5rem;">Saiba mais</a>
+          <div class="partner-info">
+            <h3>Amigos dos Animais</h3>
+            <p class="partner-location">São Paulo, SP</p>
+            <a href="#" class="btn btn-outline">Saiba mais</a>
+          </div>
         </div>
-        <div class="sponsor-item">
-          <div class="sponsor-logo">
+
+        <!-- Parceiro 2 -->
+        <div class="partner-card">
+          <div class="partner-logo">
             <img src="images/partners/abrigo-lambeijos.jpg" alt="Abrigo Lambeijos">
           </div>
-          <h3>Abrigo Lambeijos</h3>
-          <p>São Paulo, SP</p>
-          <div style="height: 40px;"></div>
-          <a href="#" class="btn btn-outline" style="margin-top: 1.5rem;">Saiba mais</a>
+          <div class="partner-info">
+            <h3>Abrigo Lambeijos</h3>
+            <p class="partner-location">São Paulo, SP</p>
+            <a href="#" class="btn btn-outline">Saiba mais</a>
+          </div>
         </div>
+
       </div>
-      <div style="text-align: center; margin-top: 3rem;">
-        <button class="btn btn-secondary" onclick="openModal('partnerModal')">Seja um parceiro</button>
+
+      <div class="partner-cta">
+        <button onclick="openModal('partnerModal')" class="btn btn-primary btn-large">
+          Seja um parceiro
+        </button>
       </div>
     </div>
   </section>
   
-<section id="doacao" class="section">
+<section id="doacao" class="section donation-section">
   <div class="container">
-    <h2 class="section-title">Área de Doação</h2>
-    
-      <p>Sua contribuição ajuda nossos animais a terem uma vida melhor 🐾</p>
+
+    <div class="section-header">
+      <span class="donation-icon">🐾</span>
+      <h2 class="section-title">Área de Doação</h2>
+      <p class="section-subtitle">
+        Sua contribuição ajuda nossos animais a terem uma vida melhor.
+      </p>
+    </div>
 
     <div class="card-grid">
-      <!-- Doação via PIX -->
-      <div class="card">
-        <div class="card-body">
-          <h3 class="card-title"><i class="fas fa-heart"></i> Doação via PIX</h3>
-          
 
-          <!-- Valores sugeridos -->
-          <div class="donation-options">
-            <button class="btn btn-success">Doe R$10</button>
-            <button class="btn btn-success">Doe R$25</button>
-            <button class="btn btn-success">Doe R$50</button>
-          </div>
+      <!-- CARD PIX -->
+      <div class="donation-card pix-card">
 
-          <!-- QR Code PIX -->
-          <p><strong>Chave PIX:</strong></p>
-          <img src="img/qrcode-pix.png" alt="QR Code PIX para doação" width="200">
-
-          <button class="btn btn-primary" onclick="copiarPix()">Copiar chave PIX</button>
+        <div class="card-header">
+          <i class="fas fa-qrcode"></i>
+          <h3>Doação via PIX</h3>
         </div>
+
+        <p class="card-description">
+          Doe qualquer valor e ajude a transformar vidas ❤️
+        </p>
+
+        <!-- Valores -->
+        <div class="donation-options">
+          <button class="donation-value">R$ 10</button>
+          <button class="donation-value active">R$ 25</button>
+          <button class="donation-value">R$ 50</button>
+        </div>
+
+        <!-- QR Code -->
+        <div class="qr-area">
+          <img src="img/qrcode-pix.png" alt="QR Code PIX">
+        </div>
+
+        <p class="pix-text">
+          Escaneie o QR Code ou copie a chave PIX abaixo
+        </p>
+
+        <!-- Chave PIX -->
+        <div class="pix-key-box">
+          <span>chave-pix@email.com</span>
+        </div>
+
+        <button class="copy-btn" onclick="copiarPix()">
+          <i class="fas fa-copy"></i>
+          Copiar chave PIX
+        </button>
+
       </div>
 
-      <!-- Doação de Itens -->
-      <div class="card">
-        <div class="card-body">
-          <h3 class="card-title"><i class="fas fa-box-open"></i> Doação de Itens</h3>
-          <p>Você pode doar:</p>
-          <ul>
-            <li><i class="fa-solid fa-bone"></i> Ração para cães e gatos</li>
-            <li><i class="fa-solid fa-pills"></i> Remédios e suplementos</li>
-            <li><i class="fa-solid fa-soap"></i> Produtos de higiene e limpeza</li>
-            <li><i class="fa-solid fa-cat"></i> Areia para gatos</li>
-            <li><i class="fa-solid fa-bed"></i> Casinhas e cobertores</li>
-            <li><i class="fa-solid fa-futbol"></i> Brinquedos e acessórios</li>
-          </ul>
+      <!-- CARD ITENS -->
+      <div class="donation-card item-card">
 
-
-          <form action="mailto:seuemail@exemplo.com" method="post" enctype="text/plain">
-            <div class="form-group">
-              <label for="nome">Seu nome:</label>
-              <input type="text" id="nome" name="nome" class="form-control" required>
-            </div>
-
-            <div class="form-group">
-              <label for="mensagem">Mensagem:</label>
-              <textarea id="mensagem" name="mensagem" class="form-control" rows="4" required></textarea>
-            </div>
-
-            <input type="submit" class="btn btn-secondary" value="Enviar interesse">
-          </form>
+        <div class="card-header orange">
+          <i class="fas fa-box-open"></i>
+          <h3>Doação de Itens</h3>
         </div>
+
+        <p class="card-description">
+          Você também pode ajudar com doações físicas.
+        </p>
+
+        <ul class="donation-list">
+          <li><i class="fa-solid fa-bone"></i> Ração para cães e gatos</li>
+          <li><i class="fa-solid fa-pills"></i> Remédios e suplementos</li>
+          <li><i class="fa-solid fa-soap"></i> Produtos de higiene</li>
+          <li><i class="fa-solid fa-cat"></i> Areia para gatos</li>
+          <li><i class="fa-solid fa-bed"></i> Cobertores e casinhas</li>
+          <li><i class="fa-solid fa-futbol"></i> Brinquedos e acessórios</li>
+        </ul>
+
+        <form class="donation-form">
+
+          <input 
+            type="text" 
+            placeholder="Seu nome"
+            class="modern-input"
+            required
+          >
+
+          <textarea 
+            placeholder="Mensagem"
+            class="modern-input"
+            rows="4"
+            required
+          ></textarea>
+
+          <button type="submit" class="submit-btn">
+            <i class="fas fa-paper-plane"></i>
+            Enviar interesse
+          </button>
+
+        </form>
+
       </div>
     </div>
   </div>
 </section>
 
+<!-- Toast -->
+<div id="toast" class="toast">
+  <span id="toast-text">Chave PIX copiada com sucesso!</span>
+</div>
+
+<style>
+.toast {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #FF9800;     /* Laranja */
+  color: #000000;                /* Preto */
+  padding: 18px 28px;
+  border-radius: 10px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+  display: none;
+  z-index: 9999;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  white-space: nowrap;
+}
+</style>
+
 <script>
 function copiarPix() {
-  navigator.clipboard.writeText("seuemail@exemplo.com");
-  alert("Chave PIX copiada!");
+  navigator.clipboard.writeText("chave-pix@email.com").then(() => {
+    
+    const toast = document.getElementById('toast');
+    const toastText = document.getElementById('toast-text');
+    
+    toastText.textContent = "Chave PIX copiada com sucesso!"; 
+    toast.style.display = "block";
+    
+    // Some automaticamente após 3 segundos
+    setTimeout(() => {
+      toast.style.display = "none";
+    }, 3000);
+  });
 }
 </script>
 
@@ -605,6 +697,26 @@ function copiarPix() {
         }
     });
     </script>
+
+<script>
+
+const donationButtons = document.querySelectorAll('.donation-value');
+
+donationButtons.forEach(button => {
+
+  button.addEventListener('click', () => {
+
+    donationButtons.forEach(btn => {
+      btn.classList.remove('active');
+    });
+
+    button.classList.add('active');
+
+  });
+
+});
+
+</script>
     
   <style>
     html {

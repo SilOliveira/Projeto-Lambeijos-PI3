@@ -6,6 +6,8 @@
   <title>Abrigo Lambeijos - Encontre seu novo amigo</title>
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
   <!-- Cabeçalho -->
@@ -31,63 +33,109 @@
     </div>
   </header>
   
-<section id="doacao" class="section">
+<section id="doacao">
+
   <div class="container">
-    <h2 class="section-title">Área de Doação</h2>
+
+    <div class="section-header">
+      <span class="donation-icon">🐾</span>
+
+      <h2 class="section-title">
+        Área de Doação
+      </h2>
+
+      <p class="section-subtitle">
+        Sua contribuição ajuda nossos animais a terem uma vida melhor.
+      </p>
+    </div>
 
     <div class="card-grid">
-      <!-- Doação via PIX -->
-      <div class="card">
-        <div class="card-body">
-          <h3 class="card-title"><i class="fas fa-heart"></i> Doação via PIX</h3>
-          <p>Sua contribuição ajuda nossos animais a terem uma vida melhor 🐾</p>
 
-          <!-- Valores sugeridos -->
-          <div class="donation-options">
-            <button class="btn btn-success">Doe R$10</button>
-            <button class="btn btn-success">Doe R$25</button>
-            <button class="btn btn-success">Doe R$50</button>
-          </div>
+      <!-- PIX -->
+      <div class="donation-card">
 
-          <!-- QR Code PIX -->
-          <p><strong>Chave PIX:</strong></p>
-          <img src="img/qrcode-pix.png" alt="QR Code PIX para doação" width="200">
-
-          <button class="btn btn-primary" onclick="copiarPix()">Copiar chave PIX</button>
+        <div class="card-header">
+          <i class="fas fa-qrcode"></i>
+          <h3>Doação via PIX</h3>
         </div>
+
+        <p class="card-description">
+          Doe qualquer valor e ajude a transformar vidas ❤️
+        </p>
+
+        <div class="donation-options">
+          <button class="donation-value">R$ 10</button>
+          <button class="donation-value active">R$ 25</button>
+          <button class="donation-value">R$ 50</button>
+        </div>
+
+        <div class="qr-area">
+          <img src="img/qrcode-pix.png" alt="QR Code PIX">
+        </div>
+
+        <p class="pix-text">
+          Escaneie o QR Code ou copie a chave PIX abaixo
+        </p>
+
+        <div class="pix-key-box">
+          sua-chave-pix@email.com
+        </div>
+
+        <button class="copy-btn" onclick="copiarPix()">
+          <i class="fas fa-copy"></i>
+          Copiar chave PIX
+        </button>
+
       </div>
 
-      <!-- Doação de Itens -->
-      <div class="card">
-        <div class="card-body">
-          <h3 class="card-title"><i class="fas fa-box-open"></i> Doação de Itens</h3>
-          <p>Você pode doar:</p>
-          <ul>
-            <li>Ração para cães e gatos</li>
-            <li>Remédios e suplementos</li>
-            <li>Produtos de higiene e limpeza</li>
-            <li>Areia para gatos</li>
-            <li>Casinhas e cobertores</li>
-            <li>Brinquedos e acessórios</li>
-          </ul>
+      <!-- ITENS -->
+      <div class="donation-card">
 
-          <form action="mailto:seuemail@exemplo.com" method="post" enctype="text/plain">
-            <div class="form-group">
-              <label for="nome">Seu nome:</label>
-              <input type="text" id="nome" name="nome" class="form-control" required>
-            </div>
-
-            <div class="form-group">
-              <label for="mensagem">Mensagem:</label>
-              <textarea id="mensagem" name="mensagem" class="form-control" rows="4" required></textarea>
-            </div>
-
-            <input type="submit" class="btn btn-secondary" value="Enviar interesse">
-          </form>
+        <div class="card-header orange">
+          <i class="fas fa-box-open"></i>
+          <h3>Doação de Itens</h3>
         </div>
+
+        <p class="card-description">
+          Você também pode ajudar com doações físicas.
+        </p>
+
+        <ul class="donation-list">
+          <li><i class="fa-solid fa-bone"></i> Ração para cães e gatos</li>
+          <li><i class="fa-solid fa-pills"></i> Remédios e suplementos</li>
+          <li><i class="fa-solid fa-soap"></i> Produtos de higiene</li>
+          <li><i class="fa-solid fa-cat"></i> Areia para gatos</li>
+          <li><i class="fa-solid fa-bed"></i> Cobertores e casinhas</li>
+          <li><i class="fa-solid fa-futbol"></i> Brinquedos e acessórios</li>
+        </ul>
+
+        <form class="donation-form">
+
+          <input
+            type="text"
+            placeholder="Seu nome"
+            class="modern-input"
+          >
+
+          <textarea
+            placeholder="Mensagem"
+            class="modern-input"
+            rows="4"
+          ></textarea>
+
+          <button type="submit" class="submit-btn">
+            <i class="fas fa-paper-plane"></i>
+            Enviar interesse
+          </button>
+
+        </form>
+
       </div>
+
     </div>
+
   </div>
+
 </section>
 
 <script>
